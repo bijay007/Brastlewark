@@ -1,0 +1,11 @@
+<!--@gnome details lower section-->
+	<section>
+		<div class="row">
+			<ul class="details">
+			<p>Below names</p>
+				<li ng-repeat="gnome in vm.gnomeList | limitTo:vm.limit">
+					<span>{{gnome.name}}</span>
+				</li>
+			</ul>
+		</div>
+	</section>

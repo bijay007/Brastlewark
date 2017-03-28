@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Brastlewark">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome to Brastlewark</title>
+  <!-- install these dependencies using `bower install` -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+</head>
+
+<body>
+<!-- load app states here-->
+<ui-view></ui-view>
+<!-- custom script bundles-->
+<script src="app/app.js"></script>
+<script src="app/config.js"></script>
+<script src="app/services/gnomeFactory.js"></script>
+<script src="app/components/gnomeDetails/detailsController.js"></script>
+<script src="app/components/filters/filtersController.js"></script>
+</body>
+
+</html>
