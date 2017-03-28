@@ -1,12 +1,12 @@
 <!--@filter and sorting section -->
-
+<div class="container">
 	<aside class="row filters">
 		<div id="search">
 			<input type="text" ng-model="vm.query" placeholder="Filter gnomes by typing their name....">
 		</div>
 		<div id="orderby">
 			<ul class="list-inline">
-				<li>Order By : </li>
+				<li>Order By&nbsp;<i class="glyphicon glyphicon-sort-by-attributes"></i></li>
 				<li>
 					<input value="name" type="radio" ng-model="vm.order">
 					<span>Name</span>
@@ -21,21 +21,22 @@
 
 <!--@gnome details lower section-->
 
-	<section>
+	<section id="details">
 		<div class="row">
 			<ul class="list-inline gnomelist">
 				<li ng-repeat="gnome in vm.gnomeList | startFrom:(vm.currentPage-1) * vm.limit | limitTo: vm.limit | filter: { name : vm.query } | orderBy: vm.order">
-					<div class="elements">
-						<figure>
-							<img ng-src={{gnome.thumbnail}} alt="{{gnome.id}}" class="img-responsive">	
-							<figcaption>{{gnome.name}}</figcaption>
-						</figure>
-					</div>
+					<figure>
+						<img ng-src={{gnome.thumbnail}} alt="{{gnome.id}}" class="img-responsive">	
+						<figcaption>{{gnome.name}}</figcaption>
+					</figure>
 				</li>
 			</ul>
 		</div>
 	</section>
 
 <!--@angular-ui-boostrap pagination directive helper-->
-	<ul uib-pagination total-items="vm.totalItems" ng-model="vm.currentPage" max-size="vm.maxBtnVal" items-per-page="vm.limit" class="pagination-sm" boundary-links="true"></ul>
-	<pre>Page: {{vm.currentPage}} / {{vm.numPages}}</pre>
+	<div class="container pagination">
+		<ul uib-pagination total-items="vm.totalItems" ng-model="vm.currentPage" max-size="vm.maxBtnVal" items-per-page="vm.limit" class="pagination-sm" boundary-links="true"></ul>
+		<pre>Page: {{vm.currentPage}} / {{vm.numPages}}</pre>
+	</div>
+</div>

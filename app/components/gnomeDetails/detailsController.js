@@ -9,7 +9,7 @@
     vm.query = ''
     vm.currentPage = 1
     vm.maxBtnVal = 7
-    vm.limit = 16
+    vm.limit = 15
 
     GnomeFactory.getAllGnomes()
         .then((data) => {
