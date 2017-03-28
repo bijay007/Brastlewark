@@ -1,4 +1,11 @@
+<!--static header-->
+<header ng-include src="'app/templates/banner.html'"></header>
+
+<!--loading  home state views-->
 <main class="container">
 	<div ui-view="filters"></div>
 	<div ui-view="details"></div>
 </main>
+
+<!--static footer-->
+<footer ng-include src="'app/templates/footer.html'"></footer>
