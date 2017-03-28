@@ -1,1 +1,1 @@
-angular.module('Brastlewark', ['ui.router'])
+angular.module('Brastlewark', ['ui.router', 'ui.bootstrap'])
