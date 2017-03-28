@@ -25,7 +25,7 @@
 		<div class="row">
 			<ul class="list-inline gnomelist">
 				<li ng-repeat="gnome in vm.gnomeList | startFrom:(vm.currentPage-1) * vm.limit | limitTo: vm.limit | filter: { name : vm.query } | orderBy: vm.order">
-					<figure>
+					<figure class="hvr-float-shadow">
 						<img ng-src={{gnome.thumbnail}} alt="{{gnome.id}}" class="img-responsive">	
 						<figcaption>{{gnome.name}}</figcaption>
 					</figure>
@@ -36,7 +36,7 @@
 
 <!--@angular-ui-boostrap pagination directive helper-->
 	<div class="container pagination">
-		<ul uib-pagination total-items="vm.totalItems" ng-model="vm.currentPage" max-size="vm.maxBtnVal" items-per-page="vm.limit" class="pagination-sm" boundary-links="true"></ul>
+		<ul uib-pagination total-items="vm.totalItems" ng-model="vm.currentPage" max-size="vm.maxBtnVal" items-per-page="vm.limit" class="pagination-lg" boundary-links="true"></ul>
 		<pre>Page: {{vm.currentPage}} / {{vm.numPages}}</pre>
 	</div>
 </div>
