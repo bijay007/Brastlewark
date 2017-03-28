@@ -9,11 +9,6 @@ function statesManager ($stateProvider, $urlRouterProvider) {
       url: '/',
       views: {
         '': {templateUrl: '/app/mainPage.html'},
-        'filters@home': {
-          templateUrl: '/app/components/filters/filters.html',
-          controller: 'FiltersController',
-          controllerAs: 'vm'
-        },
         'details@home': {
           templateUrl: '/app/components/gnomeDetails/details.html',
           controller: 'DetailsController',

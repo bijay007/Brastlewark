@@ -1,11 +1,31 @@
-<!--@gnome details lower section-->
-<section>
-	<div class="row">
-		<ul class="details">
-		<p>Below names</p>
-			<li ng-repeat="gnome in vm.gnomeList | limitTo:vm.limit">
-				<span>{{gnome.name}}</span>
+<!--@filter and sorting section -->
+	<aside class="row filter">
+		<input type="text" ng-model="query" placeholder="Filter gnomes by typing their name....">
+		<ul class="list-inline">
+			<li>Order By : </li>
+			<li>
+				<input value="name" type="radio" ng-model="vm.order">
+				<span>Name</span>
+			</li>
+			<li>
+				<input value="age" type="radio" ng-model="vm.order">
+				<span>Age</span>
 			</li>
 		</ul>
-	</div>
-</section>
+	</aside>
+
+<!--@gnome details lower section-->
+	<section>
+		<div class="row">
+			<ul class="list-inline gnomelist">
+				<li ng-repeat="gnome in vm.gnomeList | limitTo:vm.limit | filter: { name : query } | orderBy : vm.order">
+					<div class="elements">
+						<figure>
+							<img ng-src={{gnome.thumbnail}} alt="{{gnome.id}}" class="img-responsive">	
+							<figcaption>{{gnome.name}}</figcaption>
+						</figure>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>

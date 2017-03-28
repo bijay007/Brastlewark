@@ -5,15 +5,17 @@
 
   function DetailsController (GnomeFactory) {
     let vm = this
-    vm.limit = 50
+    vm.limit = 20
+    vm.query = ''
     GnomeFactory.getAllGnomes()
-      .then((data) => { vm.gnomeList = data })
-
-        // data = data.map(gnome => {
-        //   if (gnome.friends === []) gnome.friends = ['No friends -_-']
-        //   return gnome
-        // })
-        // we do this to filter fields we are intersted in. To get all fields just do, vm.gnomeList = data
-        // vm.gnomeList = [data.name, data.image, data.age, data.professions, data.friends, data.hair_color]
+      .then((data) => {
+        data = data.map(gnome => {
+          // just so that user knows about it (instead of leaving blank space)
+          if (gnome.friends === []) gnome.friends = ['0 Friends']
+          return gnome
+        })
+        vm.gnomeList = data
+        return vm.gnomeList
+      })
   }
 })()
