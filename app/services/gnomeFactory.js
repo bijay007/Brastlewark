@@ -9,8 +9,8 @@
     function getAllGnomes () {
       const url = 'https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json'
       return $http.get(url)
-        .then(response => response.data.Brastlewark)
-          // $rootScope.$broadcast('gnomesFound', allData)
+        // .then(response => response.data.Brastlewark)
+          // $rootScope.$broadcast('gnomesFound', data)
     }
     return allGnomes
   }
