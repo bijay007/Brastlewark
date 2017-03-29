@@ -1,5 +1,6 @@
 <!--@filter and sorting section -->
 <div class="container">
+
 	<aside class="row filters">
 		<div id="search">
 			<input type="text" ng-model="vm.query" placeholder="Filter gnomes by typing their name....">
@@ -42,27 +43,27 @@
 		<pre>Page: {{vm.currentPage}} / {{vm.numPages}}</pre>
 	</div>
 
-  <!-- @modal template start -->
+<!-- @modal template start -->
   <script type="text/ng-template" id="myModal.html">
     <div class="modal-header">
-      <h3 class="modal-title">Details of this Gnome</h3>
+      <h3 class="modal-title">Secrets of {{gnomeInfo[index].name}}</h3>
     </div>
 	  <div class="modal-body" id="modalbody">
 		<ul>
-	        <p>Friends : </p>
-	        <li ng-repeat="friend in gnomeInfo.friends">
+	        <label>Friends : </label>
+	        <li ng-repeat="friend in gnomeInfo[index].friends">
 	        	<span>{{friend}}</span>
 	        </li>
 	    </ul>
 	    <ul>
 	       	<p>Professions :</p>
-	       	<li ng-repeat="job in gnomeInfo.profession">
+	       	<li ng-repeat="job in gnomeInfo[index].professions">
 	       		<span>{{job}}</span>
 	       	</li>
 	    </ul>
 	    <p>Gender assumed to be : 
-	       	<span ng-if="gnomeInfo.hair_color === 'Pink'">{{Female}}</span>
-	       	<span ng-if="gnomeInfo.hair_color !== 'Pink'">{{Male}}</span>
+	       	<span ng-if="gnomeInfo[index].hair_color === 'Pink'">{{Female}}</span>
+	       	<span ng-if="gnomeInfo[index].hair_color !== 'Pink'">{{Male}}</span>
 	    </p>
 	  </div>
 	  <div class="modal-footer">

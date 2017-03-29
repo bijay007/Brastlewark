@@ -31,6 +31,7 @@
         size: 'sm',
         controller: 'ModalController',
         resolve: {
+          index: index,
           gnomeData: () => vm.gnomeList
         }
       }
