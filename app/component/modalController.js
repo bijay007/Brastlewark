@@ -9,7 +9,6 @@ function ModalController ($scope, $uibModalInstance, $log, gnomeData, index) {
     return gnome
   })
   $scope.index = index
-  console.log($scope.gnomeInfo)
   $scope.ok = function () {
   // when ok, sends data (nothing in this case) back to controller that triggered the modal instance to open
     $uibModalInstance.close($scope)

@@ -26,12 +26,10 @@
 		<div class="row">
 			<ul class="list-inline gnomelist">
 				<li ng-repeat="gnome in vm.gnomeList | startFrom:(vm.currentPage-1) * vm.limit | limitTo: vm.limit | filter: { name : vm.query } | orderBy: vm.order">
-					<button type="button" ng-click="vm.showModal($index)">
-						<figure class="hvr-float-shadow">
-							<img ng-src={{gnome.thumbnail}} alt="{{gnome.id}}" class="img-responsive" glyphicon-load>	
-							<figcaption>{{gnome.name}}</figcaption>
-						</figure>
-					</button>
+					<figure class="hvr-float-shadow" ng-click="vm.showModal($index)">
+						<img ng-src={{gnome.thumbnail}} alt="{{gnome.id}}" class="img-responsive" glyphicon-load>	
+						<figcaption>{{gnome.name}} : Age&nbsp;{{gnome.age}}</figcaption>
+					</figure>
 				</li>
 			</ul>
 		</div>
@@ -48,22 +46,23 @@
     <div class="modal-header">
       <h3 class="modal-title">Secrets of {{gnomeInfo[index].name}}</h3>
     </div>
-	  <div class="modal-body" id="modalbody">
+	  <div class="modal-body container" id="modalbody">
 		<ul>
-	        <label>Friends : </label>
+			<!-- couldn't change styles from sass. so i styled it inline-->
+	        <label style="font-size: 16px;">Friends : </label>
 	        <li ng-repeat="friend in gnomeInfo[index].friends">
 	        	<span>{{friend}}</span>
 	        </li>
 	    </ul>
 	    <ul>
-	       	<p>Professions :</p>
+	       	<label style="font-size: 16px;">Professions :</label>
 	       	<li ng-repeat="job in gnomeInfo[index].professions">
 	       		<span>{{job}}</span>
 	       	</li>
 	    </ul>
 	    <p>Gender assumed to be : 
-	       	<span ng-if="gnomeInfo[index].hair_color === 'Pink'">{{Female}}</span>
-	       	<span ng-if="gnomeInfo[index].hair_color !== 'Pink'">{{Male}}</span>
+	       	<span ng-if="gnomeInfo[index].hair_color === 'Pink'"><strong>Female</strong></span>
+	       	<span ng-if="gnomeInfo[index].hair_color !== 'Pink'"><strong>Male</strong></span>
 	    </p>
 	  </div>
 	  <div class="modal-footer">
