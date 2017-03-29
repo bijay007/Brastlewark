@@ -21,6 +21,7 @@
           vm.numPages = Math.round(vm.totalItems / vm.limit)
           return vm.gnomeList
         })
+        .catch(err => { console.log(err) })
 
     // opening modal window to trigger model instance controller to act
     vm.showModal = (index) => {
