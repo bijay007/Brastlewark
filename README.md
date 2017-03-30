@@ -18,9 +18,9 @@ To install the application on your local machines, you need to :
 
 #### Custom Objects/Functions
 
-1. I have added some custom-made directives and filters for extended funcionalities.
-    1.imagePreLoad.js - Directive - Preloads an icon while image is loading
-    2.startFrom - Filter - assigns a array chunk size to display in every page
+1. I have added some custom-made directives and filters for extended funcionalities.  
+    i. imagePreLoad.js - Directive - Preloads a light icon while image is loading  
+    ii. startFrom - Filter - assigns a array chunk size to display in every page  
 
 #### Difficulties Faced
 1. Searching for ways to load large images in a more friendly UX way
