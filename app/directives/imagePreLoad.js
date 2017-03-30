@@ -1,3 +1,4 @@
+// this directive basically shows a heart-icon until the ng-src image has loaded in DOM
 (function () {
   angular
     .module('Brastlewark')
@@ -5,8 +6,8 @@
     .directive('glyphiconLoad', [function glyphiconLoad () {
       return {
         restrict: 'A',
-        link: function glyphiconLoadLink ($scope, elem, attrs) {
-          $scope.$watch('ngSrc', function watchNgSrc () {
+        link: function glyphiconLoadLink (scope, elem, attrs) {
+          scope.$watch('ngSrc', function watchNgSrc () {
             elem.hide()
             elem.after('<i class="glyphicon glyphicon-heart"></i>')  // add pre-icon
           })

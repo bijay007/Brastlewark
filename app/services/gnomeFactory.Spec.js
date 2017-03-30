@@ -8,71 +8,73 @@ describe('gnomeFactory', () => {
     GnomeFactory = _GnomeFactory_
   }))
   it('should exist', function () {
-    expect(GnomeFactory).toBeDefined()
+    expect(GnomeFactory).toBeDefined() // gnomeFactory is undefined in test, was unable to workaround it
   })
   describe('.getAllGnomes()', function () {
     it('should exist', function () {
       expect(GnomeFactory.getAllGnomes()).toBeDefined()
     })
   })
-// // testing the DetailsController (& checking that it receives the json correctly)
-//   describe('Testing Controller', function () {
-//     let vm, ctrl, httpBackend, rootScope
 
-//     beforeEach(inject(function ($controller, $rootScope, $httpBackend) {
-//       rootScope = $rootScope
-//       vm = $rootScope.$new()
-//       ctrl = $controller('DetailsController', {$scope: vm})
-//       httpBackend = $httpBackend
-//     }))
+// testing the DetailsController (checking that it receives the json correctly)
 
-//     afterEach(function () {
-//       httpBackend.verifyNoOutstandingExpectation()
-//       httpBackend.verifyNoOutstandingRequest()
-//     })
+  describe('Testing my Controller', function () {
+    let vm, ctrl, httpBackend, rootScope
 
-//     it('should initialize the title in the scope', function () {
-//       expect(vm.title).toBeDefined()
-//       expect(vm.title).toBe('Testing Controller & Factory Data')
-//     })
+    beforeEach(inject(function ($controller, $rootScope, $httpBackend) {
+      rootScope = $rootScope
+      vm = $rootScope.$new()
+      ctrl = $controller('DetailsController', {$scope: vm})
+      httpBackend = $httpBackend
+    }))
 
-//     it('should contain string typed by the user', function () {
-//       expect(vm.query).toBeUndefined()
-//       expect(vm.query.length).toBe(0)
+    afterEach(function () {
+      httpBackend.verifyNoOutstandingExpectation()
+      httpBackend.verifyNoOutstandingRequest()
+    })
 
-//       vm.query = 'Bijay'
+    it('should initialize the title in the scope', function () {
+      expect(vm.title).toBeDefined()
+      expect(vm.title).toBe('Testing my Controller')
+    })
 
-//       expect(vm.query.length).toBe(5)
-//     })
+    it('should contain string typed by the user', function () {
+      expect(vm.query).toBeUndefined()
+      expect(vm.query.length).toBe(0)
 
-//     it('should have an array of objects in gnomelist', function () {
-//       vm.gnomeList = [
-//         {
-//           name: 'Haha',
-//           age: 23
-//         },
-//         {
-//           name: 'Wawa',
-//           weight: 58.5
-//         }
-//       ]
+      vm.query = 'Bijay'
 
-//       expect(vm.gnomelist.length).toBe(2)
-//       expect(vm.gnomelist instanceof Array).toBeTruthy()
-//       expect(vm.gnomelist[0]).toEqual(jasmine.any(Object))
-//       expect(Object.keys(vm.gnomelist[0])).toContain('id')
-//     })
-//   })
+      expect(vm.query.length).toBe(5)
+    })
 
-// // checking the custom filter service I made for pagination in angular-ui-bootstrap
+    it('should have an array of objects in gnomelist', function () {
+      vm.gnomeList = [
+        {
+          name: 'Haha',
+          age: 23
+        },
+        {
+          name: 'Wawa',
+          weight: 58.5
+        }
+      ]
 
-//   describe('Testing AngularJS Filter', function () {
-//     it('should return only 15 elements', inject(function ($filter) {
-//       let gnomes = $filter('startFrom')
-//       let sliced = gnomes()
+      expect(vm.gnomelist.length).toBe(2)
+      expect(vm.gnomelist instanceof Array).toBeTruthy()
+      expect(vm.gnomelist[0]).toEqual(jasmine.any(Object))
+      expect(Object.keys(vm.gnomelist[0])).toContain('id')
+    })
+  })
 
-//       expect(sliced.length).toBe(15)
-//       expect(sliced[0] instanceof Array).toBeTruthy()
-//     }))
-//   })
+// checking the custom filter service I made for pagination in angular-ui-bootstrap
+
+  describe('Testing AngularJS Filter', function () {
+    it('should return only 15 elements', inject(function ($filter) {
+      let gnomes = $filter('startFrom')
+      let sliced = gnomes()
+
+      expect(sliced.length).toBe(15)
+      expect(sliced[0] instanceof Array).toBeTruthy()
+    }))
+  })
 })
