@@ -1,132 +1,76 @@
-/* line 1, /home/bijay007/Brastlewark/stylesheets/sass/_banner.sass */
 header {
   background: url("../img/elfvillage.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat; }
+  header .topbanner {
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-family: 'Ceviche One';
+    text-align: center;
+    color: #fff; }
+    header .topbanner h1 {
+      text-shadow: 1px 1px #000; }
+    header .topbanner i {
+      font-size: 35px;
+      color: #000;
+      text-shadow: 1px 1px #fff; }
+    header .topbanner blockquote {
+      font-family: 'Jim Nightshade';
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 40px; }
 
-/* line 5, /home/bijay007/Brastlewark/stylesheets/sass/_banner.sass */
-header .topbanner {
-  margin-bottom: 20px;
-  background-color: rgba(0, 0, 0, 0.7);
-  font-family: 'Ceviche One';
-  text-align: center;
-  color: #fff;
-}
-
-/* line 11, /home/bijay007/Brastlewark/stylesheets/sass/_banner.sass */
-header .topbanner h1 {
-  text-shadow: 1px 1px #000;
-}
-
-/* line 13, /home/bijay007/Brastlewark/stylesheets/sass/_banner.sass */
-header .topbanner i {
-  font-size: 35px;
-  color: #000;
-  text-shadow: 1px 1px #fff;
-}
-
-/* line 17, /home/bijay007/Brastlewark/stylesheets/sass/_banner.sass */
-header .topbanner blockquote {
-  font-family: 'Jim Nightshade';
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 40px;
-}
-
-/* line 1, /home/bijay007/Brastlewark/stylesheets/sass/_details.sass */
 main {
   margin: 0;
-  background-color: #FFFce8;
-}
+  background-color: #FFFce8; }
+  main .filters {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between; }
+    main .filters #search {
+      margin: 10px auto; }
+      main .filters #search input {
+        text-align: center;
+        padding: 10px;
+        width: 500px;
+        border-radius: 5px; }
+    main .filters #orderby {
+      padding: 10px;
+      font-size: 18px;
+      font-weight: bold; }
+      main .filters #orderby i {
+        font-size: 15px; }
+      main .filters #orderby li {
+        padding: 5px;
+        margin-right: 15px; }
+  main #details ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    main #details ul li {
+      padding: 10px; }
+      main #details ul li figcaption {
+        text-align: center;
+        font-weight: bold;
+        padding: 2px;
+        font-size: 12px; }
+      main #details ul li img {
+        box-shadow: 2px 2px #556f6f;
+        border-radius: 4px;
+        height: 150px;
+        width: 200px; }
+  main .pagination {
+    text-align: center; }
+    main .pagination pre {
+      max-width: 70%;
+      margin: 0 auto;
+      padding: 5px; }
 
-/* line 4, /home/bijay007/Brastlewark/stylesheets/sass/_details.sass */
-main .filters {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-}
-
-/* line 9, /home/bijay007/Brastlewark/stylesheets/sass/_details.sass */
-main .filters #search {
-  margin: 10px auto;
-}
-
-/* line 11, /home/bijay007/Brastlewark/stylesheets/sass/_details.sass */
-main .filters #search input {
-  text-align: center;
-  padding: 10px;
-  width: 500px;
-  border-radius: 5px;
-}
-
-/* line 16, /home/bijay007/Brastlewark/stylesheets/sass/_details.sass */
-main .filters #orderby {
-  padding: 10px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* line 20, /home/bijay007/Brastlewark/stylesheets/sass/_details.sass */
-main .filters #orderby i {
-  font-size: 15px;
-}
-
-/* line 22, /home/bijay007/Brastlewark/stylesheets/sass/_details.sass */
-main .filters #orderby li {
-  padding: 5px;
-  margin-right: 15px;
-}
-
-/* line 26, /home/bijay007/Brastlewark/stylesheets/sass/_details.sass */
-main #details ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* line 30, /home/bijay007/Brastlewark/stylesheets/sass/_details.sass */
-main #details ul li {
-  padding: 10px;
-}
-
-/* line 32, /home/bijay007/Brastlewark/stylesheets/sass/_details.sass */
-main #details ul li figcaption {
-  text-align: center;
-  font-weight: bold;
-  padding: 2px;
-  font-size: 12px;
-}
-
-/* line 37, /home/bijay007/Brastlewark/stylesheets/sass/_details.sass */
-main #details ul li img {
-  box-shadow: 2px 2px #556f6f;
-  border-radius: 4px;
-  height: 150px;
-  width: 200px;
-}
-
-/* line 42, /home/bijay007/Brastlewark/stylesheets/sass/_details.sass */
-main .pagination {
-  text-align: center;
-}
-
-/* line 44, /home/bijay007/Brastlewark/stylesheets/sass/_details.sass */
-main .pagination pre {
-  max-width: 70%;
-  margin: 0 auto;
-  padding: 5px;
-}
-
-/* line 1, /home/bijay007/Brastlewark/stylesheets/sass/_footer.sass */
 footer {
   text-align: center;
   font-size: 25px;
   font-weight: bold;
   text-shadow: 1px 1px #000;
   background-color: #6F9CEB;
-  padding: 15px;
-}
-
-/*# sourceMappingURL=../css/styles.map */
+  padding: 15px; }
