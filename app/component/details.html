@@ -1,74 +1,74 @@
 <!--@filter and sorting section -->
 <div class="container">
 
-	<aside class="row filters">
-		<div id="search">
-			<input type="text" ng-model="vm.query" placeholder="Filter gnomes by typing their name....">
-		</div>
-		<div id="orderby">
-			<ul class="list-inline">
-				<li>Order By&nbsp;<i class="glyphicon glyphicon-sort"></i></li>
-				<li>
-					<input value="name" type="radio" ng-model="vm.order">
-					<span>Name </span>
-				</li>
-				<li>
-					<input value="age" type="radio" ng-model="vm.order">
-					<span>Age </span>
-				</li>
-			</ul>
-		</div>
-	</aside>
+    <aside class="row filters">
+        <div id="search">
+            <input type="text" ng-model="vm.query" placeholder="Filter gnomes by typing their name....">
+        </div>
+        <div id="orderby">
+            <ul class="list-inline">
+                <li>Order By&nbsp;<i class="glyphicon glyphicon-sort"></i></li>
+                <li>
+                    <input value="name" type="radio" ng-model="vm.order">
+                    <span>Name </span>
+                </li>
+                <li>
+                    <input value="age" type="radio" ng-model="vm.order">
+                    <span>Age </span>
+                </li>
+            </ul>
+        </div>
+    </aside>
 
-<!--@gnome details image blocks section-->
+    <!--@gnome details image blocks section-->
 
-	<section id="details">
-		<div class="row">
-			<ul class="list-inline gnomelist">
-				<li ng-repeat="gnome in vm.gnomeList | startFrom:(vm.currentPage-1) * vm.limit | limitTo: vm.limit | filter: { name : vm.query } | orderBy: vm.order">
-					<figure class="hvr-float-shadow" ng-click="vm.showModal($index)">
-						<img ng-src={{gnome.thumbnail}} alt="{{gnome.id}}" class="img-responsive" glyphicon-load>	
-						<figcaption>{{gnome.name}} : Age&nbsp;{{gnome.age}}</figcaption>
-					</figure>
-				</li>
-			</ul>
-		</div>
-	</section>
+    <section id="details">
+        <div class="row">
+            <ul class="list-inline gnomelist">
+                <li ng-repeat="gnome in vm.gnomeList | startFrom:(vm.currentPage-1) * vm.limit | limitTo: vm.limit | filter: { name : vm.query } | orderBy: vm.order">
+                    <figure class="hvr-float-shadow" ng-click="vm.showModal($index)">
+                        <img ng-src={{::gnome.thumbnail}} alt="{{::gnome.id}}" class="img-responsive" glyphicon-load>
+                        <figcaption>{{::gnome.name}} : Age&nbsp;{{::gnome.age}}</figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+    </section>
 
-<!--@angular-ui-boostrap pagination directive helper-->
-	<div class="container pagination">
-		<ul uib-pagination total-items="vm.totalItems" ng-model="vm.currentPage" max-size="vm.maxBtnVal" items-per-page="vm.limit" class="pagination-lg" boundary-links="true"></ul>
-		<pre>Page: {{vm.currentPage}} / {{vm.numPages}}</pre>
-	</div>
-
-<!-- @modal template start -->
-  <script type="text/ng-template" id="myModal.html">
-    <div class="modal-header">
-      <h3 class="modal-title">Secrets of {{gnomeInfo[index].name}}</h3>
+    <!--@angular-ui-boostrap pagination directive helper-->
+    <div class="container pagination">
+        <ul uib-pagination total-items="vm.totalItems" ng-model="vm.currentPage" max-size="vm.maxBtnVal" items-per-page="vm.limit" class="pagination-lg" boundary-links="true"></ul>
+        <pre>Page: {{::vm.currentPage}} / {{::vm.numPages}}</pre>
     </div>
-	  <div class="modal-body container" id="modalbody">
-		<ul>
-			<!-- couldn't change styles from sass. so i styled it inline-->
-	        <label style="font-size: 16px;">Friends : </label>
-	        <li ng-repeat="friend in gnomeInfo[index].friends">
-	        	<span>{{friend}}</span>
-	        </li>
-	    </ul>
-	    <ul>
-	       	<label style="font-size: 16px;">Professions :</label>
-	       	<li ng-repeat="job in gnomeInfo[index].professions">
-	       		<span>{{job}}</span>
-	       	</li>
-	    </ul>
-	    <p>Gender assumed to be : 
-	       	<span ng-if="gnomeInfo[index].hair_color === 'Pink'"><strong>Female</strong></span>
-	       	<span ng-if="gnomeInfo[index].hair_color !== 'Pink'"><strong>Male</strong></span>
-	    </p>
-	  </div>
-	  <div class="modal-footer">
-	    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-	    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-	  </div>
-  </script>
-<!-- end of container-->
+
+    <!-- @modal template start -->
+    <script type="text/ng-template" id="myModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Secrets of {{::gnomeInfo[index].name}}</h3>
+        </div>
+        <div class="modal-body container" id="modalbody">
+            <ul>
+                <!-- couldn't change styles from sass. so i styled it inline-->
+                <label style="font-size: 16px;">Friends : </label>
+                <li ng-repeat="friend in gnomeInfo[index].friends">
+                    <span>{{::friend}}</span>
+                </li>
+            </ul>
+            <ul>
+                <label style="font-size: 16px;">Professions :</label>
+                <li ng-repeat="job in gnomeInfo[index].professions">
+                    <span>{{::job}}</span>
+                </li>
+            </ul>
+            <p>Gender assumed to be :
+                <span ng-if="gnomeInfo[index].hair_color === 'Pink'"><strong>Female</strong></span>
+                <span ng-if="gnomeInfo[index].hair_color !== 'Pink'"><strong>Male</strong></span>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+    <!-- end of container-->
 </div>
